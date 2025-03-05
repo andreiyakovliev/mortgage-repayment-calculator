@@ -1,0 +1,79 @@
+// Заголовки, загальні БЕМ блоки та інше...
+
+//=============== Text ===============//
+
+.title {
+   font-weight: 700;
+   line-height: 1.25;
+   letter-spacing: -1px;
+
+   // Text Preset 1
+
+   &--result {
+      @include adaptiveValue("font-size", 56, 40);
+   }
+
+   // Text Preset 2
+
+   &--main {
+      font-size: 24px;
+   }
+
+   // Text Preset 3
+
+   &--placeholder {
+      font-size: 18px;
+   }
+}
+
+// Text Preset 4
+
+.text {
+   font-size: toRem(16);
+   line-height: 1.5;
+   color: $primaryDarkBlueColor;
+
+   // Text Preset 5
+
+   &--error {
+      font-size: 14px;
+      color: $redColor;
+   }
+}
+
+//=============== Button ===============//
+
+.button {
+
+   position: relative;
+   display: inline-flex;
+   justify-content: center;
+   align-items: center;
+   gap: 12px;
+   padding: 16px 40px;
+   border-radius: 999px;
+   background: $limeColor;
+   flex-shrink: 0;
+   z-index: 2;
+   width: 100%;
+
+   span {
+      z-index: 3;
+      position: relative;
+   }
+
+   &::before {
+      background: url('@img/icon-calculator.svg') 0 0 no-repeat;
+      content: "";
+      width: 24px;
+      height: 24px;
+      display: inline-block;
+      // margin-right: 16px;
+   }
+
+   @media (any-hover: hover) {
+      &:hover {
+         background-color: rgba(216, 219, 47, 0.5);
+      }
+   }
+}
