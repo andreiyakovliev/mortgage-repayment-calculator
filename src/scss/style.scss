@@ -24,13 +24,13 @@ $fontSize: toRem(16); // де 16(px) - розмір шрифту за замов
 
 // Основні кольори
 $mainColor: #133041; // Колір шрифту за замовчуванням
-$limeColor: #D8DB2F; // Lime
-$primaryDarkBlueColor: #4E6E7E; // Primary Dark Blue
-$mediumBlueColor: #6B94A8; // Medium Blue
-$lightBlueColor: #9ABED5; // Light Blue
-$veryLightBlueColor: #E4F4FD; // Very Light Blue
-$whiteColor: #FFFFFF; // White
-$redColor: #D73328; // Red
+$accent-lime: #D8DB2F; // Lime
+$primary-dark-blue: #4E6E7E; // Primary Dark Blue
+$secondary-blue: #6B94A8; // Medium Blue
+$tertiary-blue: #9ABED5; // Light Blue
+$background-light: #E4F4FD; // Very Light Blue
+$white: #FFFFFF; // White
+$error-red: #D73328; // Red
 
 // @import "base/colors-palette";
 
@@ -44,16 +44,15 @@ $maxWidth: 1920;
 $maxWidthContainer: 1170;
 // Загальний відступ у контейнера
 // (30 = по 15px ліворуч і праворуч, 0 = немає відступу)
-$containerPadding: 30;
+$containerPadding: 0;
 
 // Ширина спрацьовування першого брейкпоінту
 $containerWidth: $maxWidthContainer + $containerPadding;
 
 // Брейк-поїнти
 $pc: toEm($containerWidth); // ПК, ноутбуки, деякі планшети у горизонтальному положенні
-$tablet: toEm(991.98); // Планшети, деякі телефони в горизонтальному положенні
+$tablet: toEm(1007.98); // Планшети, деякі телефони в горизонтальному положенні
 $mobile: toEm(687.98); // Телефони L
-$mobileSmall: toEm(479.98); // Телефони S
 
 // Тип адаптива:
 // 1 = чуйність (у контейнера немає брейкпоінтів),
@@ -71,8 +70,8 @@ $responsiveType: 1;
 
 // Стилі тега BODY ============================================================================================================================================================================================================================================================================================================================================================================================
 body {
-
 	// scrollbar-gutter: stable;
+
 	// Скролл заблоковано
 	.lock & {
 		overflow: hidden;
@@ -90,6 +89,7 @@ body {
 	display: flex;
 	flex-direction: column;
 	overflow: hidden;
+	background-color: $background-light;
 
 	@supports (overflow: clip) {
 		overflow: clip;

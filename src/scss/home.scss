@@ -1,19 +1,69 @@
 //====================================================================================================
 
+//! Temporary classes
+
+.temporary-class-page {
+   display: grid; // Temporary classes
+   place-items: center; // Temporary classes
+}
+
+.temporary-class-calculator {
+   background-color: $white; // Temporary classes
+}
+
 .page {
 
    // .page__container
 
-   &__container {}
+   &__container {
+      @media (min-width:$mobile) {
+         max-width: 688px;
+      }
+
+      @media (min-width:$tablet) {
+         max-width: 1008px;
+      }
+   }
 }
 
+
 .calculator {
+   @media (min-width:$tablet) {
+      display: flex;
+   }
+
+   // .calculator__block
+
+   &__block {
+      @include adaptiveValue("padding-left", 40, 24, 0, 688, 375);
+      @include adaptiveValue("padding-right", 40, 24, 0, 688, 375);
+      @include adaptiveValue("padding-top", 40, 32, 0, 688, 375);
+      @include adaptiveValue("padding-bottom", 40, 32, 0, 688, 375);
+      width: 100%;
+
+      @media (min-width:$tablet) {
+         flex: 1 1 50%;
+      }
+   }
 
    // .calculator__form
 
    &__form {
-      padding: toRem(32) toRem(9);
+
+
+      @media (min-width:$mobile) {
+         -webkit-border-top-left-radius: 20px;
+         -webkit-border-top-right-radius: 20px;
+         -moz-border-radius-topleft: 20px;
+         -moz-border-radius-topright: 20px;
+         border-top-left-radius: 20px;
+         border-top-right-radius: 20px;
+         padding: toRem(40);
+      }
    }
+
+   // .calculator__header
+
 
    // .calculator__header
 
@@ -34,39 +84,44 @@
    // .calculator__link
 
    &__link {
-      color: $primaryDarkBlueColor;
+      color: $primary-dark-blue;
       text-decoration: underline;
       align-self: flex-start
    }
 
    // .calculator__fields
    &__fields {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      grid-template-rows: auto;
-      gap: 24px;
-      align-items: center;
-      grid-auto-rows: auto;
+
+      @media (min-width:$mobile) {
+
+         display: grid;
+         grid-template-columns: repeat(2, 1fr);
+         grid-template-rows: auto;
+         gap: 24px;
+         align-items: center;
+         grid-auto-rows: auto;
+      }
    }
 
    // .calculator__field
    &__field {
-      margin-bottom: toRem(24);
+      // margin-bottom: toRem(24);
       display: flex;
       flex-direction: column;
       justify-content: flex-start;
 
+      @media (min-width:$mobile) {
+         &:nth-child(1) {
+            grid-column: span 2;
+         }
 
-      &:nth-child(1) {
-         grid-column: span 2;
-      }
+         &:nth-child(2) {
+            grid-column: 1;
+         }
 
-      &:nth-child(2) {
-         grid-column: 1;
-      }
-
-      &:nth-child(3) {
-         grid-column: 2;
+         &:nth-child(3) {
+            grid-column: 2;
+         }
       }
    }
 
@@ -80,47 +135,52 @@
    &__fields-body input {
       position: relative;
       max-width: 100%;
-      border: 1px solid $mediumBlueColor;
+      border: 1px solid $secondary-blue;
       border-radius: 4px;
       cursor: pointer;
       outline: none;
 
       &:focus+.calculator__fields-addon {
-         border: 1px solid $limeColor;
-         background-color: $limeColor;
+         border: 1px solid $accent-lime;
+         background-color: $accent-lime;
       }
 
       &:focus {
-         border: 1px solid $limeColor;
+         border: 1px solid $accent-lime;
       }
 
-      @media (any-hover: hover) {
-         &:hover {
-            border: 1px solid $limeColor;
+      @media (min-width:$tablet) {
+
+
+         @media (any-hover: hover) {
+            &:hover {
+               border: 1px solid $accent-lime;
+            }
          }
-      }
 
-      @media (any-hover: hover) {
-         &:hover+.calculator__fields-addon {
-            background-color: $limeColor;
+         @media (any-hover: hover) {
+            &:hover+.calculator__fields-addon {
+               background-color: $accent-lime;
+            }
          }
+
+         @media (any-hover: hover) {
+            &:hover {
+               border: 1px solid $accent-lime;
+            }
+         }
+
       }
-
-
 
 
       &.error {
-         border: 1px solid $redColor;
+         border: 1px solid $error-red;
       }
 
-      @media (any-hover: hover) {
-         &:hover {
-            border: 1px solid $limeColor;
-         }
-      }
+
 
       &:focus {
-         border: 1px solid $limeColor;
+         border: 1px solid $accent-lime;
       }
 
    }
@@ -133,28 +193,31 @@
 
    &__input {
       cursor: pointer;
-      border: 1px solid $mediumBlueColor;
+      border: 1px solid $secondary-blue;
       border-radius: 4px;
       outline: none;
 
       &:focus+.calculator__fields-addon {
-         border: 1px solid $limeColor;
-         background-color: $limeColor;
+         border: 1px solid $accent-lime;
+         background-color: $accent-lime;
       }
 
       &:focus {
-         border: 1px solid $limeColor;
+         border: 1px solid $accent-lime;
       }
 
-      @media (any-hover: hover) {
-         &:hover {
-            border: 1px solid $limeColor;
+      @media (hover: hover) and (pointer: fine) {
+
+         @media (any-hover: hover) {
+            &:hover {
+               border: 1px solid $accent-lime;
+            }
          }
-      }
 
-      @media (any-hover: hover) {
-         &:hover+.calculator__fields-addon {
-            background-color: $limeColor;
+         @media (any-hover: hover) {
+            &:hover+.calculator__fields-addon {
+               background-color: $accent-lime;
+            }
          }
       }
    }
@@ -168,8 +231,8 @@
       top: 0;
       right: 0;
       padding: 12.5px 16px;
-      background-color: $veryLightBlueColor;
-      color: $primaryDarkBlueColor;
+      background-color: $background-light;
+      color: $primary-dark-blue;
       -webkit-border-top-right-radius: 4px;
       -webkit-border-bottom-right-radius: 4px;
       -moz-border-radius-topright: 4px;
@@ -192,12 +255,15 @@
       }
 
       &.error {
-         background-color: $redColor;
-         color: $whiteColor;
+         background-color: $error-red;
+         color: $white;
       }
 
-      &:hover {
-         background-color: $limeColor;
+      @media (hover: hover) and (pointer: fine) {
+
+         &:hover {
+            background-color: $accent-lime;
+         }
       }
    }
 
@@ -229,10 +295,6 @@
 
    &__radio {
 
-
-
-
-
       &:not(:last-child) {
          margin-bottom: toRem(24);
       }
@@ -251,7 +313,7 @@
 
       &:has(.calculator__radio-input:checked) {
          background-color: rgba(216, 219, 47, 0.1);
-         border: 1px solid $limeColor;
+         border: 1px solid $accent-lime;
       }
    }
 
@@ -267,7 +329,7 @@
       width: 19.5px;
       height: 19.5px;
       border-radius: 50%;
-      border: 2px solid $limeColor;
+      border: 2px solid $accent-lime;
       position: relative;
       cursor: pointer;
       background-color: transparent;
@@ -280,7 +342,7 @@
          left: 19%;
          top: 20%;
          border-radius: 50%;
-         background-color: $limeColor;
+         background-color: $accent-lime;
          /* Колір точки */
       }
 
@@ -292,11 +354,32 @@
 
    // .calculator__results
    &__results {
-      padding: toRem(32) toRem(15);
       background-color: $mainColor;
-      color: $whiteColor;
-      margin-left: -15px;
-      margin-right: -15px;
+      color: $white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      @media (min-width:$mobile) {
+         -webkit-border-bottom-right-radius: 20px;
+         -webkit-border-bottom-left-radius: 20px;
+         -moz-border-radius-bottomright: 20px;
+         -moz-border-radius-bottomleft: 20px;
+         border-bottom-right-radius: 20px;
+         border-bottom-left-radius: 20px;
+      }
+
+      @media (min-width:$tablet) {
+         -webkit-border-top-right-radius: 20px;
+         -webkit-border-bottom-right-radius: 20px;
+         -webkit-border-bottom-left-radius: 80px;
+         -moz-border-radius-topright: 20px;
+         -moz-border-radius-bottomright: 20px;
+         -moz-border-radius-bottomleft: 80px;
+         border-top-right-radius: 20px;
+         border-bottom-right-radius: 20px;
+         border-bottom-left-radius: 80px;
+      }
    }
 
    // .calculator__empty
@@ -351,18 +434,23 @@
 
    &__content-text {
       &:not(:last-child) {
-         margin-bottom: toRem(24);
+         // margin-bottom: toRem(24);
+         @include adaptiveValue("margin-bottom", 40, 24, 0, 1008, 688);
       }
    }
 
    // .calculator__result
 
    &__result {
-      padding: toRem(24) toRem(16);
-      border-top: 4px solid $limeColor;
+      border-top: 4px solid $accent-lime;
       border-radius: 8px;
       background: rgba(0, 0, 0, 0.25);
       width: 100%;
+
+      @include adaptiveValue("padding-left", 32, 16, 0, 688, 375);
+      @include adaptiveValue("padding-right", 32, 16, 0, 688, 375);
+      @include adaptiveValue("padding-top", 32, 16, 0, 688, 375);
+      @include adaptiveValue("padding-bottom", 32, 16, 0, 688, 375);
    }
 
    // .calculator__result-item
@@ -381,14 +469,14 @@
 
    &__result-value {
       position: relative;
-      color: $limeColor;
+      color: $accent-lime;
 
       &:not(:last-child) {
-         margin-bottom: toRem(33);
+         margin-bottom: toRem(32);
       }
 
       &--white {
-         color: $whiteColor;
+         color: $white;
       }
 
       &:not(:last-child)::after {
@@ -399,6 +487,7 @@
          height: 1px;
          background: rgba(154, 190, 213, 0.25);
          transform: translateY(-50%);
+         margin-top: toRem(32);
 
          @include adaptiveValue("bottom", -32, -16, 0, 1440, 688);
       }
