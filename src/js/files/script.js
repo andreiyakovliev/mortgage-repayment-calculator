@@ -3,6 +3,8 @@ import { isMobile } from "./functions.js";
 // Підключення списку активних модулів
 import { flsModules } from "./modules.js";
 
+//=============== Add error text to inputs ===============//
+
 const inputs = document.querySelectorAll('.calculator__fields-input');
 const resultButton = document.getElementById('resultButton');
 
@@ -24,6 +26,8 @@ inputs.forEach(input => {
       }
    });
 });
+
+//=============== Clear Form function ===============//
 
 const clearForm = (() => {
    const clearButton = document.getElementById('clearForm');
@@ -48,13 +52,16 @@ const clearForm = (() => {
             if (addon) addon.classList.remove('error');
             if (textError) textError.innerHTML = '';
             content.style.display = 'none';
-            empty.style.display = 'block'
+            empty.style.display = 'flex'
          })
       }))
    }
 })
 
 clearForm()
+
+//=============== Display Result from button push ===============//
+
 
 document.addEventListener('DOMContentLoaded', () => {
    const resultButton = document.getElementById('resultButton');
@@ -89,6 +96,9 @@ document.addEventListener('DOMContentLoaded', () => {
       });
    });
 });
+
+//=============== Calculate ===============//
+
 
 function calculateMortgage() {
    const amount = parseFloat(document.getElementById('amount').value);
@@ -130,11 +140,11 @@ function calculateMortgage() {
 
    console.log('Monthly Payment:', monthlyPayment.toFixed(2));
    console.log('Total Payment:', totalPayment.toFixed(2));
-
-
 }
 
 document.getElementById('resultButton').addEventListener('click', calculateMortgage);
+
+//=============== Error for check input ===============//
 
 
 document.querySelectorAll('.calculator__radio-body').forEach(radio => {

@@ -68,7 +68,11 @@
       width: 24px;
       height: 24px;
       display: inline-block;
-      // margin-right: 16px;
+   }
+
+   @media (min-width:$mobile) {
+      width: auto;
+      max-width: 100%;
    }
 
    @media (hover: hover) and (pointer: fine) {
