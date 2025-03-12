@@ -99,7 +99,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 //=============== Calculate ===============//
 
-
 function calculateMortgage() {
    const amount = parseFloat(document.getElementById('amount').value);
    const rateValue = parseFloat(document.getElementById('rate').value);
@@ -158,3 +157,29 @@ document.querySelectorAll('.calculator__radio-body').forEach(radio => {
       }
    });
 });
+
+//=============== Comma after thousand in input ===============//
+
+document.addEventListener("DOMContentLoaded", function () {
+   const input = document.getElementById("amount");
+
+   input.addEventListener("input", function () {
+      let cursorPosition = this.selectionStart;
+      let value = this.value.replace(/,/g, "");
+
+      if (!/^\d*\.?\d*$/.test(value)) return;
+
+      let [integer, decimal] = value.split(".");
+      integer = integer.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+
+      this.value = decimal !== undefined ? integer + "." + decimal : integer;
+
+      let diff = this.value.length - value.length;
+      this.setSelectionRange(cursorPosition + diff, cursorPosition + diff);
+   });
+
+   input.addEventListener("keydown", function (e) {
+      if (e.key === "Enter") e.preventDefault();
+   });
+});
+
