@@ -11,21 +11,24 @@
    background-color: $white; // Temporary classes
 }
 
+//====================================================================================================
+
 .page {
 
    // .page__container
 
    &__container {
       @media (min-width:$mobile) {
-         max-width: 688px;
+         max-width: 43rem;
       }
 
       @media (min-width:$tablet) {
-         max-width: 1008px;
+         max-width: 63rem;
       }
    }
 }
 
+//====================================================================================================
 
 .calculator {
    @media (min-width:$tablet) {
@@ -33,21 +36,21 @@
    }
 
    @media (min-width:$mobile) {
-      -webkit-border-top-left-radius: 20px;
-      -webkit-border-top-right-radius: 20px;
-      -moz-border-radius-topleft: 20px;
-      -moz-border-radius-topright: 20px;
-      border-top-left-radius: 20px;
-      border-top-right-radius: 20px;
+      -webkit-border-top-left-radius: 1.25rem;
+      -webkit-border-top-right-radius: 1.25rem;
+      -moz-border-radius-topleft: 1.25rem;
+      -moz-border-radius-topright: 1.25rem;
+      border-top-left-radius: 1.25rem;
+      border-top-right-radius: 1.25rem;
    }
 
    @media (min-width:$tablet) {
-      -webkit-border-top-left-radius: 20px;
-      -webkit-border-bottom-left-radius: 20px;
-      -moz-border-radius-topleft: 20px;
-      -moz-border-radius-bottomleft: 20px;
-      border-top-left-radius: 20px;
-      border-bottom-left-radius: 20px;
+      -webkit-border-top-left-radius: 1.25rem;
+      -webkit-border-bottom-left-radius: 1.25rem;
+      -moz-border-radius-topleft: 1.25rem;
+      -moz-border-radius-bottomleft: 1.25rem;
+      border-top-left-radius: 1.25rem;
+      border-bottom-left-radius: 1.25rem;
    }
 
    // .calculator__block
@@ -69,12 +72,12 @@
    &__form {
 
       @media (min-width:$mobile) {
-         -webkit-border-top-left-radius: 20px;
-         -webkit-border-top-right-radius: 20px;
-         -moz-border-radius-topleft: 20px;
-         -moz-border-radius-topright: 20px;
-         border-top-left-radius: 20px;
-         border-top-right-radius: 20px;
+         -webkit-border-top-left-radius: 1.25rem;
+         -webkit-border-top-right-radius: 1.25rem;
+         -moz-border-radius-topleft: 1.25rem;
+         -moz-border-radius-topright: 1.25rem;
+         border-top-left-radius: 1.25rem;
+         border-top-right-radius: 1.25rem;
          padding: toRem(40);
       }
 
@@ -122,7 +125,7 @@
          display: grid;
          grid-template-columns: repeat(2, 1fr);
          grid-template-rows: auto;
-         gap: 24px;
+         gap: 1.5rem;
          align-items: center;
          grid-auto-rows: auto;
       }
@@ -160,18 +163,18 @@
    &__fields-body input {
       position: relative;
       max-width: 100%;
-      border: 1px solid $secondary-blue;
-      border-radius: 4px;
+      border: 0.0625rem solid $secondary-blue;
+      border-radius: 0.25rem;
       cursor: pointer;
       outline: none;
 
       &:focus+.calculator__fields-addon {
-         border: 1px solid $accent-lime;
+         border: 0.0625rem solid $accent-lime;
          background-color: $accent-lime;
       }
 
       &:focus {
-         border: 1px solid $accent-lime;
+         border: 0.0625rem solid $accent-lime;
       }
 
       @media (min-width:$tablet) {
@@ -179,7 +182,7 @@
 
          @media (any-hover: hover) {
             &:hover {
-               border: 1px solid $accent-lime;
+               border: 0.0625rem solid $accent-lime;
             }
          }
 
@@ -191,7 +194,7 @@
 
          @media (any-hover: hover) {
             &:hover {
-               border: 1px solid $accent-lime;
+               border: 0.0625rem solid $accent-lime;
             }
          }
 
@@ -199,13 +202,13 @@
 
 
       &.error {
-         border: 1px solid $error-red;
+         border: 0.0625rem solid $error-red;
       }
 
 
 
       &:focus {
-         border: 1px solid $accent-lime;
+         border: 0.0625rem solid $accent-lime;
       }
 
    }
@@ -218,24 +221,24 @@
 
    &__input {
       cursor: pointer;
-      border: 1px solid $secondary-blue;
-      border-radius: 4px;
+      border: 0.0625rem solid $secondary-blue;
+      border-radius: 0.25rem;
       outline: none;
 
       &:focus+.calculator__fields-addon {
-         border: 1px solid $accent-lime;
+         border: 0.0625rem solid $accent-lime;
          background-color: $accent-lime;
       }
 
       &:focus {
-         border: 1px solid $accent-lime;
+         border: 0.0625rem solid $accent-lime;
       }
 
       @media (hover: hover) and (pointer: fine) {
 
          @media (any-hover: hover) {
             &:hover {
-               border: 1px solid $accent-lime;
+               border: 0.0625rem solid $accent-lime;
             }
          }
 
@@ -255,28 +258,28 @@
       position: absolute;
       top: 0;
       right: 0;
-      padding: 12.5px 16px;
+      padding: 0.7813rem 1rem;
       background-color: $background-light;
       color: $primary-dark-blue;
-      -webkit-border-top-right-radius: 4px;
-      -webkit-border-bottom-right-radius: 4px;
-      -moz-border-radius-topright: 4px;
-      -moz-border-radius-bottomright: 4px;
-      border-top-right-radius: 3px;
-      border-bottom-right-radius: 3px;
+      -webkit-border-top-right-radius: 0.25rem;
+      -webkit-border-bottom-right-radius: 0.25rem;
+      -moz-border-radius-topright: 0.25rem;
+      -moz-border-radius-bottomright: 0.25rem;
+      border-top-right-radius: 0.1875rem;
+      border-bottom-right-radius: 0.1875rem;
 
 
       &--left {
          left: 0;
          right: auto;
-         -webkit-border-top-left-radius: 4px;
-         -webkit-border-bottom-left-radius: 4px;
-         -moz-border-radius-topleft: 4px;
-         -moz-border-radius-bottomleft: 4px;
-         border-top-left-radius: 3px;
-         border-bottom-left-radius: 3px;
-         border-top-right-radius: 0px;
-         border-bottom-right-radius: 0px;
+         -webkit-border-top-left-radius: 0.25rem;
+         -webkit-border-bottom-left-radius: 0.25rem;
+         -moz-border-radius-topleft: 0.25rem;
+         -moz-border-radius-bottomleft: 0.25rem;
+         border-top-left-radius: 0.1875rem;
+         border-bottom-left-radius: 0.1875rem;
+         border-top-right-radius: 0rem;
+         border-bottom-right-radius: 0rem;
       }
 
       &.error {
@@ -295,16 +298,16 @@
    // .calculator__fields-input
 
    &__fields-input {
-      padding: 12px 16px 12px 60px;
+      padding: 0.75rem 1rem 0.75rem 3.75rem;
 
 
 
       &--right-1 {
-         padding: 12px 96px 12px 16px;
+         padding: 0.75rem 6rem 0.75rem 1rem;
       }
 
       &--right-2 {
-         padding: 12px 67px 12px 16px;
+         padding: 0.75rem 4.1875rem 0.75rem 1rem;
       }
    }
 
@@ -330,7 +333,7 @@
    &__radio-body {
       display: flex;
       gap: toRem(18.25);
-      padding: 12px 16px;
+      padding: 0.75rem 1rem;
 
       &:not(:last-child) {
          margin-bottom: toRem(12);
@@ -338,7 +341,7 @@
 
       &:has(.calculator__radio-input:checked) {
          background-color: rgba(216, 219, 47, 0.1);
-         border: 1px solid $accent-lime;
+         border: 0.0625rem solid $accent-lime;
       }
    }
 
@@ -351,10 +354,10 @@
       appearance: none;
       -webkit-appearance: none;
       -moz-appearance: none;
-      width: 19.5px;
-      height: 19.5px;
+      width: 1.2188rem;
+      height: 1.2188rem;
       border-radius: 50%;
-      border: 2px solid $accent-lime;
+      border: 0.125rem solid $accent-lime;
       position: relative;
       cursor: pointer;
       background-color: transparent;
@@ -362,13 +365,12 @@
       &:checked::before {
          content: "";
          position: absolute;
-         width: 10px;
-         height: 10px;
+         width: 0.625rem;
+         height: 0.625rem;
          left: 19%;
          top: 20%;
          border-radius: 50%;
          background-color: $accent-lime;
-         /* Колір точки */
       }
 
    }
@@ -386,24 +388,24 @@
       align-items: center;
 
       @media (min-width:$mobile) {
-         -webkit-border-bottom-right-radius: 20px;
-         -webkit-border-bottom-left-radius: 20px;
-         -moz-border-radius-bottomright: 20px;
-         -moz-border-radius-bottomleft: 20px;
-         border-bottom-right-radius: 20px;
-         border-bottom-left-radius: 20px;
+         -webkit-border-bottom-right-radius: 1.25rem;
+         -webkit-border-bottom-left-radius: 1.25rem;
+         -moz-border-radius-bottomright: 1.25rem;
+         -moz-border-radius-bottomleft: 1.25rem;
+         border-bottom-right-radius: 1.25rem;
+         border-bottom-left-radius: 1.25rem;
       }
 
       @media (min-width:$tablet) {
-         -webkit-border-top-right-radius: 20px;
-         -webkit-border-bottom-right-radius: 20px;
-         -webkit-border-bottom-left-radius: 80px;
-         -moz-border-radius-topright: 20px;
-         -moz-border-radius-bottomright: 20px;
-         -moz-border-radius-bottomleft: 80px;
-         border-top-right-radius: 20px;
-         border-bottom-right-radius: 20px;
-         border-bottom-left-radius: 80px;
+         -webkit-border-top-right-radius: 1.25rem;
+         -webkit-border-bottom-right-radius: 1.25rem;
+         -webkit-border-bottom-left-radius: 5rem;
+         -moz-border-radius-topright: 1.25rem;
+         -moz-border-radius-bottomright: 1.25rem;
+         -moz-border-radius-bottomleft: 5rem;
+         border-top-right-radius: 1.25rem;
+         border-bottom-right-radius: 1.25rem;
+         border-bottom-left-radius: 5rem;
       }
    }
 
@@ -466,8 +468,8 @@
    // .calculator__result
 
    &__result {
-      border-top: 4px solid $accent-lime;
-      border-radius: 8px;
+      border-top: 0.25rem solid $accent-lime;
+      border-radius: 0.5rem;
       background: rgba(0, 0, 0, 0.25);
       width: 100%;
 
@@ -482,7 +484,7 @@
    &__result-item {
       hr {
          width: 100%;
-         height: 1px;
+         height: 0.0625rem;
          background-color: rgba(154, 190, 213, 0.25);
          margin: 0 auto;
 
@@ -512,9 +514,7 @@
          color: $white;
       }
 
-      // &:not(:last-child)::after {}
    }
 }
-
 
 //====================================================================================================
